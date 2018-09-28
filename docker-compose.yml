@@ -94,9 +94,9 @@ services:
       - 3306:3306
     privileged: true
 
-  wso2:
+  mw-wso2cep:
     container_name: mw-wso2cep
-    image: wso2:4.2.0
+    image: wso2cep:4.2.0
     restart: always
     hostname: mw-wso2cep
     environment:
