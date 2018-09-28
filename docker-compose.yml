@@ -94,6 +94,22 @@ services:
       - 3306:3306
     privileged: true
 
+  wso2:
+    container_name: mw-wso2cep
+    image: wso2:4.2.0
+    restart: always
+    hostname: mw-wso2cep
+    environment:
+      - KEY_STORE_PASSWORD=${KEY_STORE_PASSWORD} 
+    volumes:
+      - ${HOST_SHARED_DIR_PATH}:/mnt/wso2
+    # networks:
+    #   - mwnet
+    ports:
+      - 9763:9763
+      - 9443:9443
+    privileged: true
+
   # networks:
   #   mwnet:
   #     external:
